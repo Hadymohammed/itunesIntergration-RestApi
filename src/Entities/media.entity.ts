@@ -16,7 +16,7 @@ export class Media {
 
     @Column({type: 'varchar'})
     artist: string;
-    @Column({type: 'varchar'})
+    @Column({type: 'varchar', nullable: true})
     artistViewUrl: string;
 
     @Column({type: 'int'})
