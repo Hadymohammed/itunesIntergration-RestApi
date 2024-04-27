@@ -28,12 +28,6 @@ export class MediaService {
             if (itunesResponse) {
                 const media = itunesResponse.results?.map(result => {
                     switch (result.wrapperType) {
-                        case 'collection':
-                            {
-                            let media = MediaMapper.toCollectionMediaEntity(result);
-                            media.termId = newTerm.id;
-                            return media;
-                        }
                         case 'track':
                             {
                                 let media = MediaMapper.toTrackMediaEntity(result);
@@ -45,8 +39,12 @@ export class MediaService {
                             media.termId = newTerm.id;
                             return media;
                         }
-                        default:
-                            return null;
+                        default:{
+                            //collection data is always present in the response
+                            let media = MediaMapper.toCollectionMediaEntity(result);
+                            media.termId = newTerm.id;
+                            return media;
+                        }
                     }
                 });
                 console.log(media);
