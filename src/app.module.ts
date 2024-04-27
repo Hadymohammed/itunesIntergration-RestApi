@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-// import { MediaModule } from './media.module/media.module';
+import { MediaModule } from './media.module/media.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { config } from 'process';
 import dataSource from './Providers/postgres/typeorm';
@@ -8,7 +8,7 @@ import typeorm from './Providers/postgres/typeorm';
 // import { configService } from './Providers/postgres/config.service';
 
 @Module({
-  imports: [
+  imports: [MediaModule,
     ConfigModule.forRoot({
       isGlobal: true,
       load: [typeorm]
