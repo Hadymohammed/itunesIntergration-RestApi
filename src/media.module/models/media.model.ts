@@ -1,9 +1,9 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 import { Term } from "./term.model";
 
 @Entity('media')
 export class Media {
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn()
     id: number;
     @Column()
     type: string;
@@ -25,8 +25,7 @@ export class Media {
     @JoinColumn({ name: 'termId' })
     term: Term;
 
-    constructor(id: number, type: string, name: string, viewUrl: string, artworkUrl100: string, artist: string, artistViewUrl: string) {
-        this.id = id;
+    constructor(type: string, name: string, viewUrl: string, artworkUrl100: string, artist: string, artistViewUrl: string) {
         this.type = type;
         this.name = name;
         this.viewUrl = viewUrl;

@@ -12,8 +12,7 @@ export class Term {
     @OneToMany(() => Media, media => media.term)
     media: Media[];
 
-    constructor(id: number, text: string) {
-        this.id = id;
+    constructor(text: string) {
         this.text = text;
     }
 }
