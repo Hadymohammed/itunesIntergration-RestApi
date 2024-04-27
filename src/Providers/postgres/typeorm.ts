@@ -10,12 +10,13 @@ const config = {
   username: `${process.env.DATABASE_USERNAME}`,
   password: `${process.env.DATABASE_PASSWORD}`,
   database: `${process.env.DATABASE_NAME}`,
-  entities: ['**/Entities/*.entity{.ts,.js}'],
-  migrations: ["**/migrations/*{.ts,.js}"],
+  entities: ['**/Entities/*.entity.js'],
+  migrations: ["**/migrations/*.js"],
   autoLoadEntities: true,
   synchronize: false,
   cli: {
-    migrationsDir: "migrations"
+    migrationsDir: "migrations",
+    entitiesDir : "Entities"
   }
 }
 
