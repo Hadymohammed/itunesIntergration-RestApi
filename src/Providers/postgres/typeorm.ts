@@ -10,14 +10,14 @@ const config = {
   username: `${process.env.DATABASE_USERNAME}`,
   password: `${process.env.DATABASE_PASSWORD}`,
   database: `${process.env.DATABASE_NAME}`,
-  entities: ['**/*.model{.ts,.js}'],
-  migrations: ["migrations/*{.ts,.js}"],
+  entities: ['**/Entities/*.entity{.ts,.js}'],
+  migrations: ["**/migrations/*{.ts,.js}"],
   autoLoadEntities: true,
   synchronize: false,
+  cli: {
+    migrationsDir: "migrations"
+  }
 }
 
 export default registerAs('typeorm', () => config)
 export const connectionSource = new DataSource(config as DataSourceOptions);
-
-// const dataSource = new DataSource(dbdatasource)
-// export default dataSource

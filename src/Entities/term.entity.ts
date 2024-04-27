@@ -1,5 +1,5 @@
 import { Column, Entity, JoinTable, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Media } from "./media.model";
+import { Media } from "./media.entity";
 
 @Entity('terms')
 export class Term {

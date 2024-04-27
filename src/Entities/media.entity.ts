@@ -1,24 +1,25 @@
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
-import { Term } from "./term.model";
+import { Term } from "./term.entity";
 
 @Entity('media')
 export class Media {
     @PrimaryGeneratedColumn()
     id: number;
-    @Column()
+    @Column({type: 'varchar'})
     type: string;
-    @Column()
+    @Column({type: 'varchar'})
     name: string;
-    @Column()
+    @Column({type: 'varchar'})
     viewUrl: string;
-    @Column({ nullable: true})
+    @Column({ type:'varchar' ,nullable: true})
     artworkUrl100: string;
 
-    @Column()
+    @Column({type: 'varchar'})
     artist: string;
-    @Column()
+    @Column({type: 'varchar'})
     artistViewUrl: string;
 
+    @Column({type: 'int'})
     termId: number;
     //relations
     @ManyToOne(() => Term, term => term.id)
