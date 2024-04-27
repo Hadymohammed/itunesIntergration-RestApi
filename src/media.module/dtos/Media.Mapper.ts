@@ -7,6 +7,7 @@ import { MediaDetailsDto } from "./out/mediaDetails.dto";
 export class MediaMapper {
     static toDetailsDto(media: Media): MediaDetailsDto {
         return new MediaDetailsDto(
+            media.id,
             media.type,
             media.name,
             media.viewUrl,
