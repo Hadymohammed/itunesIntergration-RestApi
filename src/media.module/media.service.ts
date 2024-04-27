@@ -57,4 +57,13 @@ export class MediaService {
             return isTermExist.media?.map(MediaMapper.toDetailsDto);
         }
     }
+
+    async getRandomMedia(): Promise<MediaDetailsDto[]> {
+        const media = await this.mediaRepository.createQueryBuilder('media')
+            .select()
+            .orderBy('RANDOM()')
+            .limit(50)
+            .getMany();
+        return media.map(MediaMapper.toDetailsDto);
+    }
 }
