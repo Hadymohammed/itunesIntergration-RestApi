@@ -22,7 +22,9 @@ async function bootstrap() {
 
   app.enableCors();
   
-  await app.listen(process.env.PORT || 3000);
-  console.log(`Application is running on: ${await app.getUrl()}`);
+  await app.listen(process.env.PORT || 3000, '0.0.0.0' ,async ()=>{
+    console.log(`Application is running on: ${await app.getUrl()}`);
+  });
+  
 }
 bootstrap();
