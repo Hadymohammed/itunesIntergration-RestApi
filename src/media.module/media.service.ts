@@ -2,7 +2,7 @@ import { Inject, Injectable } from "@nestjs/common";
 import { Media } from "../Entities/media.entity";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm"; 
-import { MediaDetailsDto } from "./dtos/out/mediaDetails.dto";
+import { MediaDetailsDto } from "./dtos/mediaDetails.dto";
 import { Term } from "../Entities/term.entity";
 import { ItunesService } from "../Integrations/Itunes/Itunes.service";
 import { MediaMapper } from "./dtos/Media.Mapper";
