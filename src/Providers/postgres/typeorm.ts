@@ -1,6 +1,7 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { config as dotenvConfig } from 'dotenv';
 import { registerAs } from '@nestjs/config';
+import { options } from 'yargs';
 
 dotenvConfig({ path: '.env' });
 const config = {
@@ -15,6 +16,9 @@ const config = {
   autoLoadEntities: true,
   synchronize: false,
   rejectUnauthorized: false,
+  options: {
+    trustServerCertificate: true
+  },
   ssl:true,
   cli: {
     migrationsDir: "migrations",
