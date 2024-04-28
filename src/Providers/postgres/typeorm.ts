@@ -14,6 +14,7 @@ const config = {
   migrations: ["**/migrations/*.js"],
   autoLoadEntities: true,
   synchronize: false,
+  ssl:true,
   cli: {
     migrationsDir: "migrations",
     entitiesDir : "Entities"
