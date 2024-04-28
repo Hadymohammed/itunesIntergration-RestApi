@@ -9,7 +9,6 @@ export class MediaController {
         if(!term){
             return this.mediaService.getRandomMedia();
         }
-        console.log('term', term);
         return this.mediaService.getByTerm(term);
     }
 }
