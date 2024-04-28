@@ -16,10 +16,7 @@ const config = {
   autoLoadEntities: true,
   synchronize: false,
   rejectUnauthorized: false,
-  options: {
-    trustServerCertificate: true
-  },
-  ssl:true,
+  ssl:process.env.DATABASE_SSL === 'true' ? { rejectUnauthorized: false } : false,
   cli: {
     migrationsDir: "migrations",
     entitiesDir : "Entities"
