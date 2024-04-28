@@ -4,7 +4,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm"; 
 import { MediaDetailsDto } from "./dtos/out/mediaDetails.dto";
 import { Term } from "../Entities/term.entity";
-import { ItunesService } from "src/Integrations/Itunes/Itunes.service";
+import { ItunesService } from "../Integrations/Itunes/Itunes.service";
 import { MediaMapper } from "./dtos/Media.Mapper";
 
 @Injectable()

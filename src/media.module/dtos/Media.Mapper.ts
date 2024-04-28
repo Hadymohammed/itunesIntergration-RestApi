@@ -1,7 +1,6 @@
 //create media mapper 
 import { ItunesResult } from "../../Integrations/Itunes/Itunes.response";
 import { Media } from "../../Entities/media.entity";
-import { Term } from "../../Entities/term.entity";
 import { MediaDetailsDto } from "./out/mediaDetails.dto";
 
 export class MediaMapper {
